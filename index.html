@@ -1,603 +1,620 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHK - Soluções Simples para Grandes Desafios</title>
+    <meta
+      name="description"
+      content="Blueprint: A basic template for a page stack navigation effect"
+    />
+    <meta
+      name="keywords"
+      content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr-custom.js"></script>
+  </head>
 
-<head>
-<title>CHK &#8211; Soluções Simples para Grandes Desafios.</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css2?family=Arizonia&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="wrap" style="background-color: #003882;">
-<div class="container">
-<div class="row justify-content-between">
-<div class="col-12 col-md d-flex align-items-center">
-<p class="mb-0 phone"><span class="mailus"> <i class="fa fa-phone"></i> </span> <a href="#">(+244) 941 417 825 </a> <span style="margin-left: 15px;" class="mailus">  <i class="fa fa-envelope"></i> </span> <a href="#"><span>geral@chk.co.ao</span></a></p>
-</div>
-<div class="col-12 col-md d-flex justify-content-md-end">
-<div class="social-media">
-<p class="mb-0 d-flex">
-<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a>
-<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<nav class="navbar navbar-expand-lg ftco_navbar  ftco-navbar-ligh" id="ftco-navbar" style="background-color: rgb(0, 56, 130);">
-	<div class="container">
-		<a class="navbar-brand" href="index.html"> <img src="images/logo.png" style="height: 80px;"  alt=""> </a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="oi oi-menu"></span> Menu
-	  </button>
-	  <div class="collapse navbar-collapse" id="ftco-nav">
-	  <ul class="three navbar-nav ml-auto">
+  <body>
+    <!-- navigation -->
+    <nav class="pages-nav">
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-home">Home</a>
+      </div>
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-docu">A Empresa</a>
+      </div>
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-manuals">Serviços</a>
+      </div>
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-contact">Contactos</a>
+      </div>
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-custom">Loja</a>
+      </div>
+      <div class="pages-nav__item">
+        <a class="link link--page" href="#page-training">Data Center</a>
+      </div>
+      <div class="pages-nav__item pages-nav__item--small">
+        <a class="link link--page link--faded" href="#page-buy">Network</a>
+      </div>
+      <div class="pages-nav__item pages-nav__item--small">
+        <a class="link link--page link--faded" href="#page-blog">Segurança</a>
+      </div>
+      <div class="pages-nav__item pages-nav__item--small">
+        <a class="link link--page link--faded" href="#page-software"
+          >Gestão de TI</a
+        >
+      </div>
+      <div class="pages-nav__item pages-nav__item--social">
+        <a class="link link--social link--faded" href="#"
+          ><i class="fa fa-twitter"></i
+          ><span class="text-hidden">Twitter</span></a
+        >
+        <a class="link link--social link--faded" href="#"
+          ><i class="fa fa-linkedin"></i
+          ><span class="text-hidden">LinkedIn</span></a
+        >
+        <a class="link link--social link--faded" href="#"
+          ><i class="fa fa-facebook"></i
+          ><span class="text-hidden">Facebook</span></a
+        >
+        <a class="link link--social link--faded" href="#"
+          ><i class="fa fa-youtube-play"></i
+          ><span class="text-hidden">YouTube</span></a
+        >
+      </div>
+    </nav>
+    <!-- /navigation-->
+    <!-- pages stack -->
+    <div class="pages-stack">
+      <!-- page -->
 
-		<li class="nav-item list-item three">
-			<a class="nav-link" href="index.html" style="color:aliceblue;">
-		 HOME
-			</a>
-			</li>
-	 <li class="nav-item list-item three">
-		  <a class="nav-link" href="empresachk.html"  style="color:aliceblue;">
-	   A EMPRESA
-		  </a>
-		  </li>
-		
-	 
-		  <li class="nav-item dropdown list-item three">
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color:aliceblue;">
-			    PRODUTOS
-			</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			  <a class="dropdown-item" href="network.html">Network</a>
-			  <a class="dropdown-item" href="seguraça.html">Segurança</a>
-			  <a class="dropdown-item" href="gestao-de-TI.html">Gestão de TI</a>
-			  <a class="dropdown-item" href="DataCenter.html">DataCenter</a>
-		  
-			</div>
-			</li>
-		  <li class="nav-item list-item three" >
-			<a class="nav-link" href="servicos.html" style="color:aliceblue;"  >
-		 SERVIÇOS
-			</a>
-			</li>  
-			
-			<li class="nav-item list-item three"><a href="contacto.html" class="nav-link" style="color:aliceblue;"  >CONTACTOS</a>
-			</li><li class="nav-item list-item three"  >
-				<a class="nav-link" href="blog.html" style="color:aliceblue;">
-			 BLOG
-				</a>
-				</li>  <li class="nav-item list-item three"  style="color:aliceblue;">
-					<a class="nav-link" href="#" style="color:aliceblue;">
-				 LOJA
-					</a>
-					</li>
+      <div class="page" id="page-home">
+        <!-- Blueprint header -->
+        <div style="position: fixed">
+          <video autoplay muted loop id="myVideo">
+            <source src="videos/bgp.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-  
-	  </ul>
-	  </div>
-	  </div>
-</div>
-</nav>
-<div style="background-image: url('images/pattern.png'); width: 100%; height: 25px;"> </div>
-<section class="hero-wrap">
-<div class="home-slider owl-carousel js-fullheight">
-<div class="slider-item js-fullheight" style="background-image:url(images/teamw.jpg);">
-<div class="overlay"></div>
-<div class="container">
-<div class="row d-flex no-gutters slider-text js-fullheight align-items-center align-items-stretch">
+        <header class="bp-header-page-home cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 350px" />
+          </span>
+          <p class="bp-header__desc">
+            A CHK, Lda. é uma emresa de direito Angolano, fundada em 1997.
+            Presta serviços desde 2008 no ramo de consultoria informática.
+            <br />
+            <br />
+            Oferecemos soluções completas de Gestão da sua estrutura de TI
+            (Tecnologias de Informação), em regime de avença, ou sob uma bolsa
+            de horas para suporte aos seus projectos.
+          </p>
+          <br />
 
-<div class="col-md-6 ftco-animate d-flex align-items-center">
-<div class="text w-100">
-<span class="subheading">A EMPRESA CHK OFERECE</h2></span>
-<h1>QUALIDADES EM SEUS SERVIÇOS</h1>
-<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<p><a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-white">View Portfolio</a></p> -->
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="slider-item js-fullheight" style="background-image:url(images/teamw.jpg);">
-<div class="overlay"></div>
-<div class="container">
-<div class="row d-flex no-gutters slider-text js-fullheight align-items-center align-items-stretch">
+          <div class="flex-container">
+            <div style="flex-grow: 1">
+              <div
+                class="floating"
+                style="position: relative; margin-top: -8px"
+              >
+                <label for=""
+                  >Soluções <br />
+                  de Segurança</label
+                >
+                <img
+                  src="images/servicos/segurança.png"
+                  style="margin-top: -20px"
+                />
+              </div>
+            </div>
+            <div style="flex-grow: 1">
+              <div
+                class="floating"
+                style="position: relative; margin-top: 116px"
+              >
+                <label for=""
+                  >Soluções <br />
+                  de DataCenter Cloud
+                </label>
+                <img
+                  src="images/servicos/data_center.png"
+                  style="margin-top: -20px"
+                />
+              </div>
+            </div>
 
-<div class="col-md-6 ftco-animate d-flex align-items-center">
-<div class="text w-100">
-<span class="subheading">COM A ESCOLHA DA CHK, VOCÊ TEM</h2></span>
-<h1>MELHOR SERVIÇOS DE CONSULTORIA</h1>
-<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<p><a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-white">View Portfolio</a></p> -->
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div style="flex-grow: 1">
+              <div
+                class="floating"
+                style="position: relative; margin-top: -20px"
+              >
+                <label for=""
+                  >Soluções <br />
+                  de Redes
+                </label>
+                <img src="images/servicos/rede.png" style="margin-top: -20px" />
+              </div>
+            </div>
+            <div style="flex-grow: 1">
+              <div
+                class="floating"
+                style="position: relative; margin-top: 100px"
+              >
+                <label
+                  >Sistema <br />
+                  de Gestão e TI</label
+                >
+                <img
+                  src="images/servicos/sistema.png"
+                  style="margin-top: -20px"
+                />
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <!-- /page -->
 
+      <!-- -------------------------------------------------------- -->
+      <div class="page" id="page-docu" style="overflow-y: scroll">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">A Empresa</h1>
+        </header>
 
-<div class="slider-item js-fullheight" style="background-image:url(images/teamwork3.jpg);">
-	<div class="overlay"></div>
-	<div class="container">
-	<div class="row d-flex no-gutters slider-text js-fullheight align-items-center align-items-stretch">
+        <div class="row mt-2 p-2">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 text-center">
+            <h3 class="text-white">Nossa Equipe</h3>
+            <p
+              class="text-nossa-equipa mb-5"
+              style="
+                color: white;
+                font-weight: 500;
+                font-size: 18px;
+                text-align: justify;
+              "
+            >
+              Jovens, Capazes, Formados, Certificados e Apaixonados pela nossa
+              actividade. Com mais de 10 anos de experiência, estamos
+              comprometidos com a contínua formação que esta actividade
+              diariamente exige.
+            </p>
+          </div>
+          <div class="col-md-3"></div>
+          <div class="col-md-1" style="margin-left: 50px"></div>
 
-	<div class="col-md-6 ftco-animate d-flex align-items-center">
-	<div class="text w-100">
-	<span class="subheading">Estamos preparados para</h2></span>
-	<h1>Qualquer SITUAÇÃO</h1>
-	<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-	<p><a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-white">View Portfolio</a></p> -->
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
+          <div class="col-md-3">
+            <div class="card" style="width: 300px">
+              <img
+                src="images/equip/helio.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h4 class="card-title" style="color: black">Hélio Teixeira</h4>
+
+                <h5 class="card-title" style="color: black">
+                  Director Geral e Comercial
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card" style="width: 300px">
+              <img src="images/equip/ana.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4 class="card-title" style="color: black">Ana Cauaua</h4>
+
+                <h5 class="card-title" style="color: black">
+                  Directora de Finanças e RH
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card" style="width: 300px">
+              <img
+                src="images/equip/lauro.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h4 class="card-title" style="color: black">Lauro Monteiro</h4>
+
+                <h5 class="card-title" style="color: black">
+                  Dir. de TI e Comunicação
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row" style="padding-top: 150px">
+            <div class="col-md-12 text-center">
+              <div
+                class="
+                  heading-section heading-section-white
+                  ftco-animate
+                  text-center text-white
+                "
+              >
+                <h2>MISSÃO</h2>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="images/undraw_goals_re_lu76.svg"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+            <div class="col-md-6 mt-5">
+              <p
+                style="
+                  color: white;
+                  font-size: 25px;
+                  margin-top: 80px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Prestação de serviços de Consultoria Informatica e tecnológica.
+                Licenciamento de Software, e fornecimento de Hardware a medida
+                dos nossos clientes e projectos.
+              </p>
+            </div>
+          </div>
+
+          <div class="row mt-5" style="padding-top: 10px">
+            <div class="col-md-12 text-center">
+              <div
+                class="
+                  heading-section heading-section-white
+                  ftco-animate
+                  text-center text-white
+                "
+              >
+                <h2>VISÃO</h2>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p
+                style="
+                  color: white;
+                  margin-top: 80px;
+
+                  font-size: 25px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Posicionamento no Top 10, das melhores empresas do sector de TI
+                em Angola. Fusão estratégica com gigantes tecnológicos. Listagem
+                no Gartnet Magic Quadrant.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="images/undraw_investing_re_bov7.svg"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="row" style="padding-top: 10px">
+            <div class="col-md-12 text-center" style="padding-bottom: 60px">
+              <div
+                class="
+                  heading-section heading-section-white
+                  ftco-animate
+                  text-center
+                  mb-5
+                  text-white
+                "
+              >
+                <h2>VALORES</h2>
+              </div>
+              <img
+                src="images/undraw_gardening_re_e658.svg"
+                width="40%"
+                alt=""
+              />
+            </div>
+            <div class="col-md-5 text-center">
+              <h3 style="color: white">Igualdade</h3>
+              <p
+                style="
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Respeito pelos clientes, fornecedores e colaboradores, na sua
+                dimensão total.
+              </p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 text-center">
+              <h3 style="color: white">Conhecimento</h3>
+              <p
+                style="
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Aplicação das boas práticas internacionais, agregando ao seu
+                conhecimento as lições aprendidas.
+              </p>
+            </div>
+
+            <div class="col-md-5 text-center">
+              <h3 style="color: white">Standards</h3>
+              <p
+                style="
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Cumprimento das regras e normas contratuais, dos procedimentos e
+                princípios éticos profissionais, em todos os aspectos.
+              </p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 text-center">
+              <h3 style="color: white">Confiança</h3>
+              <p
+                style="
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Manutenção constante de um alto grau de confiança por parte de
+                todos os clientes, colaboradores e fornecedores, os que espelha
+                um alto nível de satisfação.
+              </p>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <h3 style="color: white">Comunidade</h3>
+              <p
+                style="
+                  color: white;
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-align: justify;
+                "
+              >
+                Participar no progresso dos Sistemas e Tecnologias de
+                Informação, dando abertura a estágios profissionais a comunidade
+                Universitária.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------------------------------------- -->
+
+      <div class="page" id="page-manuals">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">Serviços</h1>
+        </header>
+        <img class="poster" src="images/2.jpg" alt="img02" />
+      </div>
+      <div class="page" id="page-software">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">Gestão de TI</h1>
+        </header>
+        <img class="poster" src="images/3.jpg" alt="img03" />
+      </div>
+      <div class="page" id="page-custom">
+        <header class="bp-header cf">
+          <h1 class="bp-header__title">Customization &amp; Settings</h1>
+          <p class="bp-header__desc">
+            Based on Ilya Kostin's Dribbble shot
+            <a href="https://dribbble.com/shots/2286042-Stacked-navigation"
+              >Stacked navigation</a
+            >
+          </p>
+          <p class="info">
+            "You have to make a conscious decision to change for your own
+            well-being, that of your family and your country." &mdash;Bill
+            Clinton
+          </p>
+        </header>
+        <img class="poster" src="images/4.jpg" alt="img04" />
+      </div>
+      <div class="page" id="page-training">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">Data Center</h1>
+        </header>
+        <img class="poster" src="images/5.jpg" alt="img05" />
+      </div>
+      <div class="page" id="page-buy">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">Network</h1>
+        </header>
+        <img class="poster" src="images/6.jpg" alt="img06" />
+      </div>
+      <div class="page" id="page-blog">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 200px" />
+          </span>
+          <h1 class="bp-header__title">Segurança</h1>
+        </header>
+        <img class="poster" src="images/1.jpg" alt="img01" />
+      </div>
+      <!--page-->
+
+      <div class="page" id="page-contact">
+        <header class="bp-header cf">
+          <span class="bp-header__present">
+            <img src="images/logo.png" style="width: 350px" />
+          </span>
+        </header>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card" style="padding: 30px">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: black">
+                    Entre em contato
+                  </h5>
+                  <form class="row">
+                    <div class="col-md-6">
+                      <label for="inputname4" class="form-label text-black"
+                        >Nome</label
+                      >
+                      <input type="text" class="form-control" id="inputname4" />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputemail4" class="form-label text-black"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="inputemail4"
+                      />
+                    </div>
+                    <div class="col-12 mt-4">
+                      <label for="inputAddress" class="form-label text-black"
+                        >Assunto</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputAddress"
+                        placeholder="Assunto"
+                      />
+                    </div>
+
+                    <div class="col-12 mt-4">
+                      <label for="inpumessage" class="form-label text-black"
+                        >Messagem</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="inpumessage"
+                        placeholder="Mensagem"
+                      ></textarea>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                      <button type="submit" class="btn btn-primary">
+                        Enviar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <img src="images/phone.jpg" alt="" />
+            </div>
+            <div class="col-md-3" style="margin-top: -40px">
+              <div class="row">
+                <div class="col-md-4"><i class="bi bi-geo-alt-fill"></i></div>
+                <div class="col-md-8 text">
+                  Rua Joaquim Kapango 921.Apt2/ Área Técnica: Rua João de Barros
+                  32,1.Apt2
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="margin-top: -40px">
+              <div class="row">
+                <div class="col-md-4">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div class="col-md-8 text" style="margin-top: -39px">
+                  +244 941 417 825 +244 917 498 349
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="margin-top: -40px">
+              <div class="row">
+                <div class="col-md-4">
+                  <i class="bi bi-send-fill"></i>
+                </div>
+                <div
+                  class="col-md-8 text"
+                  style="margin-top: -30px; color: black"
+                >
+                  geral@chk.co.ao
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="margin-top: -40px">
+              <div class="row">
+                <div class="col-md-4">
+                  <i class="bi bi-globe"></i>
+                </div>
+                <div class="col-md-8 text" style="margin-top: -30px">
+                  <a href="https://wolf-quiteque.github.io/chk/">www.chk.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <img class="poster" src="images/4.jpg" alt="img04" /> -->
+      </div>
+      <!-- /pages-stack -->
     </div>
-</section>
 
-<div style="background-image: url('images/pattern.png'); width: 100%; height: 25px;"> </div>
-<section class="ftco-section ftco-faqs services-section" style="background-color: white;">
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row justify-content-center pb-5">
-			<div class="col-md-12 heading-section text-center ftco-animate">
-			
-			<h2 class="mb-1" style="color: #003882;">NOSSAS SOLUÇÕES</h2>
-			</div>
-			</div>
-	<div class="row ">
-	<div class="col-md-3 text-center">
-		
-	<img src="images/rede.png" width="100%" />
-	<h4> Soluções de Rede</h4>
-	</div>
-
-	<div class="col-md-3 text-center">
-		<img src="images/segurança.png" width="100%" />
-		<h4> Soluções de Segurança</h4>
-	</div>
-
-	<div class="col-md-3 text-center">
-		<img src="images/sistema.png" width="100%" />
-		<h4> Sistema de Gestão e TI</h4>
-	</div>
-
-	<div class="col-md-3 text-center">
-		<img src="images/data_center.png" width="100%" />
-		<h4> Soluções de DataCenter Cloud</h4>
-	</div>
-	</div>
-	</div>
-	</section>
-
-<section class="ftco-section ftco-no-pt ftco-about img" id="bemvindo">
-<div class="container">
-<div class="row d-flex">
-<div class="col-md-12 about-intro">
-<div class="row d-flex">
-<div class="col-md-6 d-flex align-items-stretch">
-<div class="img d-flex align-items-center align-self-stretch justify-content-center" style="background-image:url(images/chkimg.png);">
-<div class="year-stablish text-center" >
-<div class="icon2"  style="color: #003882;"><span class="flaticon-light-bulb"></span></div>
-<div class="text">
-<strong class="number" data-number="11">0</strong>
-<span>Anos de <br> Experiência</span>
-</div>
-</div>
-<div class="img-2 d-flex align-items-center justify-content-center" style="background-image:url(images/about.jpg);">
-</div>
-</div>
-</div>
-<div class="col-md-6 pl-md-5 py-5">
-<div class="row justify-content-start pb-3">
-<div class="col-md-12 heading-section ftco-animate">
-<span class="subheading" style="color:  #003882;">Seja Bem-Vindo</span>
-<h2 class="mb-3">CHK - Soluções Simples para Grandes Desafios.</h2>
-<p style="color: black; text-align: justify;">A CHK, Lda. é uma emresa de direito Angolano,
-	fundada em 1997. Presta serviços desde 2008 no ramo
-	de consultoria informática.
-	 </p>
-<p style="color: black; text-align: justify;"> Em Colaboração com parceiros valor reconhecido a nível nacional e internacional,
-	comprometemos-nos nos serviços que criam valor aos nossos Clientes, e estabelecemos a 
-	aliança de uma relação de confiança e successo com os mesmos
-		</p>
-
-<p style="color: black; text-align: justify;">Apostamos em conceitos como uma forte
-	ligação aos nossos Clientes.
-	</p>
-
-<!-- <div class="row mb-4">
-<div class="col-md-6 ftco-animate">
-<div class="services-2 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-conversation"></span></div>
-<div class="media-body">
-<h3 class="heading">Expert<br> Team</h3>
-</div>
-</div>
-</div>
-<div class="col-md-6 ftco-animate">
-<div class="services-2 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-light-bulb"></span></div>
-<div class="media-body">
-<h3 class="heading">Solution<br> For Business</h3>
-</div>
-</div>
-</div>
-</div> -->
-
-
-<p><a href="#bemvindo" class="btn btn-danger" >Saber Mais</a></p>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section  class="ftco-section" style="margin-top: -150px;" >
-<div class="container">
-	<div class="row justify-content-center pb-5">
-		<div class="col-md-12 heading-section text-center ftco-animate">
-		<h2 class="mb-4" style="color:#003882;"> NOSSOS PRINCIPAIS SERVIÇOS </h2>
-		</div>
-	</div>
-
-	<divv class="row justify-content-center" style="margin-top: -70px;">
-<div class="col-md-4 d-flex align-self-stretch ftco-animate">
-<div class="services">
-<div class="icon"><span style="color:#f00c26" class="flaticon-ux"></span></div>
-<div class="media-body">
-<h3 class="heading mb-3">Licenciamento de Software</h3>
-<p style="color: black;"><p style="text-align: justify;">Contrato estabelecido entre o fabricante (desenvolvedor) e a pessoa ou empresa que o usará. Nele, podem existir restrições para downloads, instalações, manutenções, alterações (mudanças no código-fonte), uso de certas funcionalidades e distribuição.</p></div>
-<a href="#" class="btn-custom d-flex align-items-center justify-content-center" style="background-color:#f00c26"><span class="fa fa-chevron-right"></span></a>
-</div>
-</div>
-<div class="col-md-4 d-flex align-self-stretch ftco-animate">
-<div class="services">
-<div class="icon"><span style="color:#f00c26" class="flaticon-customer-service"></span></div>
-<div class="media-body">
-<h3 class="heading mb-3">Venda de Equipamentos</h3>
-<p style="text-align: justify;">Como representantes e distribuidores de varias marcas de sucesso renomadas temos para si uma vasta gama de equipamentos e suplementos para entregar para os nossos clientes.</p>
-</div>
-<a href="#" class="btn-custom d-flex align-items-center justify-content-center" style="background-color:#f00c26"><span class="fa fa-chevron-right"></span></a>
-</div>
-</div>
-
-<div class="col-md-4 d-flex align-self-stretch ftco-animate">
-	<div class="services">
-	<div class="icon"><span style="color:#f00c26" class="flaticon-conversation"></span></div>
-	<div class="media-body">
-	<h3 class="heading mb-3"> Monitoramento</h3>
-	<p style="text-align: justify;">Processo responsável por medir em tempo real, 24 horas por dia, os recursos das redes de computadores, desta forma, é o responsável por detectar anomalias de performance e disponibilidade.</p>
-	</div>
-	<a href="#" class="btn-custom d-flex align-items-center justify-content-center" style="background-color:#fa4c5b"><span class="fa fa-chevron-right"></span></a>
-	</div>
-	</div>
-
-</div>
-
-</div>
-
-
-</section>
-
-<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/fundo.jpg);">
-<div class="overlay"></div>
-<div class="container">
-<div class="row">
-<div class="col-md-3 d-flex counter-wrap ftco-animate">
-<div class="block-18 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span style="color: #f00c26;" class="flaticon-file"></span></div>
-<div class="text pl-3">
-<strong class="number" data-number="50">0</strong>
-<span>PROJETOS CONCLUÍDO</span>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex counter-wrap ftco-animate">
-<div class="block-18 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span style="color: #f00c26;" class="flaticon-waiter"></span></div>
-<div class="text pl-3">
-<strong class="number" data-number="100">0</strong>
-<span>NOSSA EQUIPA</span>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex counter-wrap ftco-animate">
-<div class="block-18 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span style="color: #f00c26;" class="flaticon-customer-service"></span></div>
-<div class="text pl-3">
-<strong class="number" data-number="5">0</strong>
-<span>NOSSOS SERVIÇOS</span>
-</div>
-</div>
-</div>
-<div class="col-md-3 d-flex counter-wrap ftco-animate">
-<div class="block-18 d-flex align-items-center">
-<div class="icon d-flex align-items-center justify-content-center"><span style="color: #f00c26;" class="flaticon-good-review"></span></div>
-<div class="text pl-3">
-<strong class="number" data-number="7650">0</strong>
-<span>CLIENTES SATISFEITOS</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="ftco-section " style="background-color: white;">
-<div class="container">
-
-<div class="row">
-	<div class="col-md-12 heading-section ftco-animate">
-		
-		<h2 class="mb-4" style="color: #003882;"> CONSULTORIA INFORMÁTICA</h2>
-		</div>
-	
-<div class="col-md-6">
-
-	<p style="color: black; text-align: justify;">A consultoria assenta na transição de conhecimento e da
-	experiência de um homem ou equipa em prol de um objetivo,
-	em benefício de outrem.</p>
-<p style="color: black; text-align: justify;">
-	Este serviço voltado para empresas, instituições ou
-	outras organizações, tem como finalidade, examinar os seus
-	processos e identificar problemas, irregularidades ou violações
-	de qualquer marco legislatório, ou aspectos técnicos que
-	podem ser melhorados.
-	</p>
-<p style="color: black; text-align: justify;">
-	No caso da consultoria informática, os processos
-avaliados são aqueles relacionados às Tecnologias de
-Informação e Comunicação (TIC), a fim de fornecer
-ferramentas e soluções para otimizá-los.
-</p>
-</div>
-<div class="col-md-6">
-	<img class="img" width="100%" height="300px" src="images/compu.jpg">
-</div>
-</div>
-</div>
-</section>
-
-
-<section class="ftco-section " style="margin-top: -100px;">
-	<div class="container">
-	
-	<div class="row">
-		<div class="col-md-12 heading-section ftco-animate">
-			
-			<h2 class="mb-4" style="color: #003882;">SISTEMAS DE GESTÃO DE
-				DOCUMENTOS</h2>
-			</div>
-			<div class="col-md-6">
-				<img class="img" width="100%" height="400px" src="images/files.jpg">
-			</div>
-	<div class="col-md-6">
-	
-		<p style="color: black;text-align: justify;">A gestão de documentos em ambiente empresarial pode
-			ser por vezes caótica.</p>
-	<p style="color: black; text-align: justify;">
-		Por esse motivo, a CHK tem mais de 8 anos de
-experiência, e um departamento especializado na gestão
-de arquivos que se adequa as várias as fases da Gestão
-Documental.
-<br>
-<ul style="color: black;">
-	<li>Organizar</li>
-	<li>Catalogar</li>
-	<li>Digitalizar</li>
-	<li>Pesquisar</li>
-	<li>Armazenar</li>
-
-
-
-
-</ul>
-		</p>
-	<p style="color: black;text-align: justify;">
-		Contamos com vários soluções que nos ajudam a
-alcançar excelente métricas para os nossos projectos e
-satisfação dos clientes.
-	</p>
-	</div>
-
-	</div>
-	</div>
-	</section>
-	
-
-<!-- 
-<section class="ftco-section testimony-section bg-light">
-<div class="overlay"></div>
-<div class="container">
-<div class="row pb-4">
-<div class="col-md-7 heading-section heading-section-white ftco-animate">
-<span class="subheading">CONHEÇA OS CLIENTES</span>
-<h2 class="mb-4"> NOSSOS CLIENTES	</h2>
-</div>
-</div>
-</div>
-<div class="container container-2">
-<div class="row ftco-animate">
-<div class="col-md-12">
-<div class="carousel-testimony owl-carousel ">
-<div class="item">
-<div class="testimony-wrap py-4 ">
-<img src="images/atlantico.png" alt="">
-</div>
-</div>
-<div class="item">
-<div class="testimony-wrap py-4">
-<img src="images/unitel.png" alt="">
-</div>
-</div>
-<div class="item">
-<div class="testimony-wrap py-4">
-<img src="images/cuca.png" alt="">
-</div>
-</div>
-<div class="item">
-<div class="testimony-wrap py-4">
-<img src="images/exonimobile.png" alt="">
-</div>
-</div>
-<div class="item">
-<div class="testimony-wrap py-4 ">
-<img src="images/fidelidade.png" alt="">
-</div>
-</div>
-<div class="item">
-	<div class="testimony-wrap py-4">
-	<img src="images/hp.png" alt="">
-	</div>
-	</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-
-<section class="ftco-intro ftco-section">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-md-12 text-center">
-<div class="img" style="background-image: url(images/fundo.jpg);">
-<div class="overlay"></div>
-<h2>ASSINE A NOSSA NEWSLETTER</h2>
-<div class="row justify-content-center">
-<div class="col-md-6">
-<form action="#" class="subscribe-form">
-<div class="form-group d-flex">
-<input type="text" class="form-control" placeholder="Insira o endereço de e-mail">
-<input type="submit" value="Se inscrever" class="submit px-3">
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div style="background-image: url('images/pattern.png'); width: 100%; height: 25px;"> </div>
-<footer class="ftco-footer" style="background-color:  #003882;">
-	<div class="container">
-	<div class="row mb-5" style="align-content: center;">
-	<div class="col-sm-12 col-md">
-	<div class="ftco-footer-widget mb-4" style="align-content: center;">
-	<img src="images/logo1.png" style="height: 100px;" alt="">
-	<ul class="ftco-footer-social list-unstyled mt-2" style="margin-left: 25px;">
-	<li  class="ftco-animate"><a href="#" style="background-color:#f00c26"><span class="fa fa-facebook"></span></a></li>
-	<li  class="ftco-animate"><a href="#"style="background-color:#f00c26"><span class="fa fa-linkedin"></span></a></li>
-	<li  class="ftco-animate"><a href="#"style="background-color:#f00c26"><span class="fa fa-instagram"></span></a></li>
-	</ul>
-	</div>
-	</div>
-	<div class="col-sm-12 col-md">
-	<div class="ftco-footer-widget mb-4 ml-md-4">
-	<h2 class="ftco-heading-2">Explorar</h2>
-	<ul class="list-unstyled">
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Sobre</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contacto</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Projectos</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-	</ul>
-	</div>
-	</div>
-	<div class="col-sm-12 col-md">
-	<div class="ftco-footer-widget mb-4 ml-md-4">
-	<h2 class="ftco-heading-2">Info</h2>
-	<ul class="list-unstyled">
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Junte-se a nós</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacidade &amp; Política</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Termos &amp; Condições</a></li>
-	</ul>
-	</div>
-	</div>
-	<div class="col-sm-12 col-md">
-	<div class="ftco-footer-widget mb-4">
-	<h2 class="ftco-heading-2">Empresa</h2>
-	<ul class="list-unstyled">
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Sobre nos</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contactos</a></li>
-	<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Carreiras</a></li>
-	</ul>
-	</div>
-	</div>
-	<div class="col-sm-12 col-md">
-	<div class="ftco-footer-widget mb-4">
-	<h2 class="ftco-heading-2">Tem alguma pergunta?</h2>
-	<div class="block-23 mb-3">
-		<ul>
-			<li><span  class="icon fa fa-map marker" ></span><span class="text">Travessa Nicolau Castelo Branco 40
-				Ingombota</p></span></li>
-			<li><a href="#"><span  class="icon fa fa-phone" ></span><span class="text">+244 941 417 825</span></a></li>
-			<li><a href="#"><span class="icon fa fa-phone" ></span><span class="text">+244 917 498 349</span></a></li>
-			<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text"><span class="__cf_email__" data-cfemail="147d7a727b546d7b6166707b79757d7a3a777b79">geral@chk.co.ao</span></span></a></li>
-			</ul>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	<div class="container-fluid px-0 py-5 bg-black">
-	<div class="container">
-	<div class="row">
-	<div class="col-md-12">
-	<p class="mb-0" style="color: rgba(255,255,255,.5);">
-	Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> Todos Directos Reservado | Criado com <i style="color:#f00c26;" class="fa fa-heart color-danger" aria-hidden="true"></i> por <a href="#" target="_blank" rel="nofollow noopener"></a>
-	</p>
-	</div>
-	</div>
-	</div>
-	</div>
-</footer>
-
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'UA-23581568-13');
-		</script>
-<script defer src="../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"version":"2021.4.0","rayId":"64992edc1e81526e","si":10}'></script>
-</body>
-
-<!-- Mirrored from preview.colorlib.com/theme/portech/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 May 2021 11:36:36 GMT -->
+    <!-- /pages-stack -->
+    <button class="menu-button"><span>Menu</span></button>
+    <script src="js/classie.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

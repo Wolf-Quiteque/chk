@@ -1,249 +1,242 @@
-(function($) {
+/**
+ * main.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2015, Codrops
+ * http://www.codrops.com
+ */
+;(function(window) {
 
-	"use strict";
+	'use strict';
 
-	$(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
-
-
-	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
-	fullHeight();
-
-	// loader
-	var loader = function() {
-		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
+	var support = { transitions: Modernizr.csstransitions },
+		// transition end event name
+		transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
+		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		onEndTransition = function( el, callback ) {
+			var onEndCallbackFn = function( ev ) {
+				if( support.transitions ) {
+					if( ev.target != this ) return;
+					this.removeEventListener( transEndEventName, onEndCallbackFn );
+				}
+				if( callback && typeof callback === 'function' ) { callback.call(this); }
+			};
+			if( support.transitions ) {
+				el.addEventListener( transEndEventName, onEndCallbackFn );
 			}
-		}, 1);
-	};
-	loader();
-
-	// Scrollax
-   $.Scrollax();
-
-	var carousel = function() {
-		$('.home-slider').owlCarousel({
-	    loop:true,
-	    autoplay: true,
-	    margin:0,
-	    animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
-	    nav:true,
-	    dots: true,
-	    autoplayHoverPause: false,
-	    items: 1,
-	    navText : ["<span class='ion-ios-arrow-back'></span>","<span class='ion-ios-arrow-forward'></span>"],
-	    responsive:{
-	      0:{
-	        items:1
-	      },
-	      600:{
-	        items:1
-	      },
-	      1000:{
-	        items:1
-	      }
-	    }
-		});
-		$('.carousel-testimony').owlCarousel({
-			center: false,
-			loop: true,
-			items:1,
-			margin: 30,
-			stagePadding: 0,
-			nav: false,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
-			responsive:{
-				0:{
-					items: 1
-				},
-				600:{
-					items: 2
-				},
-				1000:{
-					items: 4
-				}
+			else {
+				onEndCallbackFn();
 			}
-		});
+		},
+		// the pages wrapper
+		stack = document.querySelector('.pages-stack'),
+		// the page elements
+		pages = [].slice.call(stack.children),
+		// total number of page elements
+		pagesTotal = pages.length,
+		// index of current page
+		current = 0,
+		// menu button
+		menuCtrl = document.querySelector('button.menu-button'),
+		// the navigation wrapper
+		nav = document.querySelector('.pages-nav'),
+		// the menu nav items
+		navItems = [].slice.call(nav.querySelectorAll('.link--page')),
+		// check if menu is open
+		isMenuOpen = false;
 
-	};
-	carousel();
-
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		// 	 timer;
-		// clearTimeout(timer);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
-	});
-
-
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
-
-	// scroll
-	var scrollWindow = function() {
-		$(window).scroll(function(){
-			var $w = $(this),
-					st = $w.scrollTop(),
-					navbar = $('.ftco_navbar'),
-					sd = $('.js-scroll-wrap');
-
-			if (st > 150) {
-				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
-				}
-			} 
-			if (st < 150) {
-				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
-				}
-			} 
-			if ( st > 350 ) {
-				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
-				}
-				
-				if(sd.length > 0) {
-					sd.addClass('sleep');
-				}
-			}
-			if ( st < 350 ) {
-				if ( navbar.hasClass('awake') ) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if(sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
-		});
-	};
-	scrollWindow();
-
-	var counter = function() {
-		
-		$('#section-counter, .ftco-about, .ftco-counter').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-						console.log(num);
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
+	function init() {
+		buildStack();
+		initEvents();
 	}
-	counter();
 
+	function buildStack() {
+		var stackPagesIdxs = getStackPagesIdxs();
 
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
+		// set z-index, opacity, initial transforms to pages and add class page--inactive to all except the current one
+		for(var i = 0; i < pagesTotal; ++i) {
+			var page = pages[i],
+				posIdx = stackPagesIdxs.indexOf(i);
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
-				i++;
+			if( current !== i ) {
+				classie.add(page, 'page--inactive');
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .ftco-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
-							} else {
-								el.addClass('fadeInUp ftco-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
-					});
-					
-				}, 100);
-				
+				if( posIdx !== -1 ) {
+					// visible pages in the stack
+					page.style.WebkitTransform = 'translate3d(0,100%,0)';
+					page.style.transform = 'translate3d(0,100%,0)';
+				}
+				else {
+					// invisible pages in the stack
+					page.style.WebkitTransform = 'translate3d(0,75%,-300px)';
+					page.style.transform = 'translate3d(0,75%,-300px)';		
+				}
+			}
+			else {
+				classie.remove(page, 'page--inactive');
 			}
 
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
+			page.style.zIndex = i < current ? parseInt(current - i) : parseInt(pagesTotal + current - i);
+			
+			if( posIdx !== -1 ) {
+				page.style.opacity = parseFloat(1 - 0.1 * posIdx);
+			}
+			else {
+				page.style.opacity = 0;
+			}
+		}
+	}
 
+	// event binding
+	function initEvents() {
+		// menu button click
+		menuCtrl.addEventListener('click', toggleMenu);
 
-	// magnific popup
-	$('.image-popup').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
-    }
-  });
+		// navigation menu clicks
+		navItems.forEach(function(item) {
+			// which page to open?
+			var pageid = item.getAttribute('href').slice(1);
+			item.addEventListener('click', function(ev) {
+				ev.preventDefault();
+				openPage(pageid);
+			});
+		});
 
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
+		// clicking on a page when the menu is open triggers the menu to close again and open the clicked page
+		pages.forEach(function(page) {
+			var pageid = page.getAttribute('id');
+			page.addEventListener('click', function(ev) {
+				if( isMenuOpen ) {
+					ev.preventDefault();
+					openPage(pageid);
+				}
+			});
+		});
 
-    fixedContentPos: false
-  });
+		// keyboard navigation events
+		document.addEventListener( 'keydown', function( ev ) {
+			if( !isMenuOpen ) return; 
+			var keyCode = ev.keyCode || ev.which;
+			if( keyCode === 27 ) {
+				closeMenu();
+			}
+		} );
+	}
 
+	// toggle menu fn
+	function toggleMenu() {
+		if( isMenuOpen ) {
+			closeMenu();
+		}
+		else {
+			openMenu();
+			isMenuOpen = true;
+		}
+	}
 
+	// opens the menu
+	function openMenu() {
+		// toggle the menu button
+		classie.add(menuCtrl, 'menu-button--open')
+		// stack gets the class "pages-stack--open" to add the transitions
+		classie.add(stack, 'pages-stack--open');
+		// reveal the menu
+		classie.add(nav, 'pages-nav--open');
 
+		// now set the page transforms
+		var stackPagesIdxs = getStackPagesIdxs();
+		for(var i = 0, len = stackPagesIdxs.length; i < len; ++i) {
+			var page = pages[stackPagesIdxs[i]];
+			page.style.WebkitTransform = 'translate3d(0, 75%, ' + parseInt(-1 * 200 - 50*i) + 'px)'; // -200px, -230px, -260px
+			page.style.transform = 'translate3d(0, 75%, ' + parseInt(-1 * 200 - 50*i) + 'px)';
+		}
+	}
 
-})(jQuery);
+	// closes the menu
+	function closeMenu() {
+		// same as opening the current page again
+		openPage();
+	}
 
+	// opens a page
+	function openPage(id) {
+		var futurePage = id ? document.getElementById(id) : pages[current],
+			futureCurrent = pages.indexOf(futurePage),
+			stackPagesIdxs = getStackPagesIdxs(futureCurrent);
+
+		// set transforms for the new current page
+		futurePage.style.WebkitTransform = 'translate3d(0, 0, 0)';
+		futurePage.style.transform = 'translate3d(0, 0, 0)';
+		futurePage.style.opacity = 1;
+
+		// set transforms for the other items in the stack
+		for(var i = 0, len = stackPagesIdxs.length; i < len; ++i) {
+			var page = pages[stackPagesIdxs[i]];
+			page.style.WebkitTransform = 'translate3d(0,100%,0)';
+			page.style.transform = 'translate3d(0,100%,0)';
+		}
+
+		// set current
+		if( id ) {
+			current = futureCurrent;
+		}
+		
+		// close menu..
+		classie.remove(menuCtrl, 'menu-button--open');
+		classie.remove(nav, 'pages-nav--open');
+		onEndTransition(futurePage, function() {
+			classie.remove(stack, 'pages-stack--open');
+			// reorganize stack
+			buildStack();
+			isMenuOpen = false;
+		});
+	}
+
+	// gets the current stack pages indexes. If any of them is the excludePage then this one is not part of the returned array
+	function getStackPagesIdxs(excludePageIdx) {
+		var nextStackPageIdx = current + 1 < pagesTotal ? current + 1 : 0,
+			nextStackPageIdx_2 = current + 2 < pagesTotal ? current + 2 : 1,
+			idxs = [],
+
+			excludeIdx = excludePageIdx || -1;
+
+		if( excludePageIdx != current ) {
+			idxs.push(current);
+		}
+		if( excludePageIdx != nextStackPageIdx ) {
+			idxs.push(nextStackPageIdx);
+		}
+		if( excludePageIdx != nextStackPageIdx_2 ) {
+			idxs.push(nextStackPageIdx_2);
+		}
+
+		return idxs;
+	}
+
+	init();
+	
+	//changes to a page such as id="page-manuals" without opening the menu and preserving menu transition functionality
+	window.openPageNoTransition = function(id){
+
+		var futurePage = id ? document.getElementById(id) : pages[current],
+			futureCurrent = pages.indexOf(futurePage),
+			stackPagesIdxs = getStackPagesIdxs(futureCurrent);
+
+		// set transforms for the new current page
+		futurePage.style.WebkitTransform = 'translate3d(0, 0, 0)';
+		futurePage.style.transform = 'translate3d(0, 0, 0)';
+		futurePage.style.opacity = 1;
+
+		classie.remove(futurePage, 'page--inactive');
+
+		// set current
+		if( id ) {
+			current = futureCurrent;
+		}
+
+		buildStack();
+	}
+})(window);
